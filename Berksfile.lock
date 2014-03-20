@@ -1,0 +1,7 @@
+DEPENDENCIES
+  role-env-demo
+    path: .
+    metadata: true
+
+GRAPH
+  role-env-demo (1.0.0)

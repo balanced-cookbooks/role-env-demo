@@ -1,0 +1,23 @@
+---
+driver:
+  name: vagrant
+
+provisioner:
+  name: chef_solo
+
+platforms:
+  - name: ubuntu-12.04
+
+suites:
+- name: default
+  run_list:
+  - recipe[role-env-demo]
+- name: prod
+  run_list:
+  - recipe[role-env-demo::prod]
+- name: test
+  run_list:
+  - recipe[role-env-demo::test]
+- name: extra
+  run_list:
+  - recipe[role-env-demo::extra]
