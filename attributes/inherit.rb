@@ -17,6 +17,7 @@
 #
 
 include_attribute 'role-env-demo'
-return unless %w{prod inherit}.include?(node['app_environment'])
+return unless node['app_environment'] == 'inherit'
+include_attribute 'role-env-demo::prod'
 
-default['role-env-demo']['iama'] = 'teapot'
+default['role-env-demo']['iama'] = node['role-env-demo']['iama'] + ' with more'

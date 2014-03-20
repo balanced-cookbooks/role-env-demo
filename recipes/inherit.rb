@@ -16,7 +16,4 @@
 # limitations under the License.
 #
 
-include_attribute 'role-env-demo'
-return unless %w{prod inherit}.include?(node['app_environment'])
-
-default['role-env-demo']['iama'] = 'teapot'
+include_recipe 'role-env-demo'

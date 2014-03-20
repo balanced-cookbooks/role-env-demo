@@ -21,3 +21,6 @@ suites:
 - name: extra
   run_list:
   - recipe[role-env-demo::extra]
+- name: inherit
+  run_list:
+  - recipe[role-env-demo::inherit]

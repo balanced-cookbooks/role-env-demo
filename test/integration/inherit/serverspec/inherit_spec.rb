@@ -16,7 +16,10 @@
 # limitations under the License.
 #
 
-include_attribute 'role-env-demo'
-return unless %w{prod inherit}.include?(node['app_environment'])
+require 'serverspec'
+include Serverspec::Helper::Exec
+include Serverspec::Helper::DetectOS
 
-default['role-env-demo']['iama'] = 'teapot'
+describe file('/demo') do
+  its(:content) { should eq('teapot with more') }
+end
